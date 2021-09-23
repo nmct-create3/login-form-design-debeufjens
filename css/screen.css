@@ -443,6 +443,39 @@ a:focus {
     ---
     Website main logo
 */
+.c-card {
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 0 0 3px #00000007;
+}
+
+.c-card__body {
+    padding: 16px 48px;
+}
+
+.c-card__title {
+    text-align: center;
+    padding-top: 48px;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.c-card__footer {
+    border-top: 1px solid white;
+    padding: 24px 24px 6px 24px;
+    text-align: center;
+}
+
+.c-label {
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 8px;
+    color: #606274;
+}
+
+.c-label--option {
+    margin-bottom: 0;
+}
 
 .c-logo {
     height: 24px;
