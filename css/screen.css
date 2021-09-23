@@ -4,7 +4,14 @@
 
 @font-face {
     font-family: 'Inter';
-    src: url(../fonts/Inter-Regular.woff2) format('woff2');
+    font-weight: 400;
+    src: url('../fonts/Inter-Regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-weight: 600;
+    src: url('../fonts/Inter-SemiBold.woff2') format('woff2');
 }
 
 /*------------------------------------*\
@@ -29,7 +36,7 @@
 html {
     font-size: 16px;
     line-height: 1.5;
-    font-family: 'Inter', Helvetica, arial, sans-serif;
+    font-family: Inter, arial, sans-serif;
     color: #20223a;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
@@ -168,20 +175,12 @@ a {
 
 a:visited,
 a:active {
-    color: #3385ff;
+    color: #1a5cc1;
 }
 
 a:hover,
 a:focus {
-    color: DeepPink;
-}
-
-input {
-    display: block;
-}
-
-label {
-    display: block;
+    color: #1a5cc1;
 }
 
 /*------------------------------------*\
@@ -412,6 +411,7 @@ label {
 */
 
 .o-button-reset {
+    outline: none;
     border: none;
     margin: 0;
     padding: 0;
@@ -432,7 +432,6 @@ label {
 
     /* Corrects inability to style clickable `input` types in iOS */
     -webkit-appearance: none;
-    outline: none;
 }
 
 /*------------------------------------*\
@@ -443,24 +442,6 @@ label {
     Component: Logo
     ---
     Website main logo
-*/
-
-/*
-    Component: Card
-    ---
-    Card with box shadow
-*/
-
-/*
-    Component: Forms
-    ---
-    Everything form related here
-*/
-
-/*
-    Component: Input
-    ---
-    Class to put on all input="text" like form inputs
 */
 
 .c-logo {
@@ -477,46 +458,76 @@ label {
 .c-logo__path--1 {
     fill: #20223a;
 }
+
 .c-logo__path--2 {
     fill: #3385ff;
 }
+
 .c-logo__path--3 {
     fill: #1b4186;
 }
+
+/*
+    Component: Card
+    ---
+    Card with box shadow
+*/
+
+/*
+    Component: Forms
+    ---
+    Everything form related here
+*/
+
+.c-form-field--option {
+    display: flex;
+    align-items: center;
+}
+
+/*
+    Component: Input
+    ---
+    Class to put on all input="text" like form inputs
+*/
+
 .c-input {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+    outline: none;
+
+    display: block;
     width: 100%;
+
     border-width: 1px;
     border-style: solid;
     border-color: #e2e3e7;
     border-radius: 3px;
+
     font-family: inherit;
-    color: inherit;
     font-size: 16px;
     line-height: 24px;
+    color: #b5b6c0;
     padding: 11px;
 }
-.c-checkbox {
-    display: flex;
-    align-items: center;
-}
+
 .c-input:focus {
-    outline: none;
+    border-color: #3385ff;
     box-shadow: h-offset v-offset blur spread color;
     box-shadow: 0 0 0 3px #3385ff4d;
 }
 
+/*
     Component: Label
     ---
     Class to put on all form labels
 */
 
-
 .c-label {
+    display: block;
 }
 
+/* If a input is focused within the form-field class change te color of the label */
 
 .c-form-field:focus-within .c-label {
 }
@@ -524,165 +535,199 @@ label {
 /*
     Component: Button
     ---
-    Class
-.c-form-field:focus-within .c-label {
-}
-
-    Component: Button
-    ---
     Class to put on form buttons or links
 */
 
-
 .c-button {
     width: 100%;
-    color: white;
     font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    color: white;
+
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 3px;
+    border-color: #2e77e6;
+
+    padding: 11px;
+    background-color: #3385ff;
 }
+
 .c-button:hover {
+    background-color: #4f95ff;
 }
+
 .c-button:focus {
+    background-color: #3385ff;
+    border-color: #2e77e6;
+    box-shadow: h-offset v-offset blur spread color;
+    box-shadow: 0 0 0 3px #3385ff4d;
 }
+
 .c-button:active {
+    background-color: #2e77e6;
 }
+
 .c-button--block {
 }
 
+/*------------------------------------*\
 #UTILITIES
 \*------------------------------------*/
 
 /*
     Utilities: color
     ---
-    Uti
-    Utilities: color
-    ---
     Utility classes to put specific colors onto elements
 */
 
-.
 .u-color-neutral-base {
     color: Silver;
 }
+
 .u-color-neutral-dark {
     color: Black;
 }
 
+/*
     Utilities: spacing
     ---
     Utility classes to put specific margins and paddings onto elements
 */
 
-.
 .u-pt-clear {
     padding-top: 0 !important;
 }
+
 .u-mb-clear {
     margin-bottom: 0 !important;
 }
+
 .u-mb-xs {
     margin-bottom: 4px !important;
 }
+
 .u-mb-sm {
     margin-bottom: 8px !important;
 }
+
 .u-mb-md {
     margin-bottom: 16px !important;
 }
+
 .u-mb-lg {
     margin-bottom: 32px !important;
 }
+
 .u-mb-xl {
     margin-bottom: 48px !important;
 }
 
+/*
     Utilities: max-width
     ---
     Utility classes to put specific max widths onto elements
 */
 
-.
 .u-max-width-xs {
     max-width: 27em !important;
 }
+
 .u-max-width-sm {
     max-width: 39em !important;
 }
+
 .u-max-width-md {
     max-width: 50em !important;
 }
+
 .u-max-width-lg {
     max-width: 63.5em !important;
 }
+
 .u-max-width-none {
     max-width: none !important;
 }
 
+/*
     Utilities: align
     ---
     Utility classes align text or components
 */
 
-.
 .u-align-text-center {
     text-align: center;
 }
+
 .u-align-center {
     margin: 0 auto;
 }
 
+/*
     Utilities: text
     Utility classes to create smaller or bigger test
 */
 
-.
 .u-text-sm {
     font-size: 14px;
 }
 
+/*
     Utility: Widths
     ---
     Utility classes to put specific widths onto elements
     Will be mostly used on o-layout__item
 */
 
-.
 .u-width-auto {
     width: auto !important;
 }
+
 .u-1-of-2 {
     width: 50% !important;
 }
+
 .u-1-of-3 {
     width: 33.3333333333% !important;
 }
+
 .u-2-of-3 {
     width: 66.6666666667% !important;
 }
+
 .u-1-of-4 {
     width: 25% !important;
 }
+
 .u-3-of-4 {
     width: 75% !important;
 }
+
 .u-1-of-5 {
     width: 20% !important;
 }
+
 .u-2-of-5 {
     width: 40% !important;
 }
+
 .u-3-of-5 {
     width: 60% !important;
 }
+
 .u-4-of-5 {
     width: 80% !important;
 }
+
 .u-1-of-6 {
     width: 16.6666666667% !important;
 }
+
 .u-5-of-6 {
     width: 83.3333333333% !important;
 }
+
 @media (min-width: 576px) {
     .u-1-of-2-bp1 {
         width: 50% !important;
@@ -718,6 +763,7 @@ label {
         width: 83.3333333333% !important;
     }
 }
+
 @media (min-width: 768px) {
     .u-1-of-2-bp2 {
         width: 50% !important;
@@ -753,6 +799,7 @@ label {
         width: 83.3333333333% !important;
     }
 }
+
 @media (min-width: 992px) {
     .u-1-of-2-bp3 {
         width: 50% !important;
@@ -788,6 +835,7 @@ label {
         width: 83.3333333333% !important;
     }
 }
+
 @media (min-width: 1200px) {
     .u-1-of-2-bp4 {
         width: 50% !important;
@@ -824,13 +872,11 @@ label {
     }
 }
 
+/*------------------------------------*\
 #MEDIA
 \*------------------------------------*/
 
 /*
-    Media Queries
-    ---
-    EXAMPL
     Media Queries
     ---
     EXAMPLE Media Queries for Responsive Design.
@@ -838,43 +884,41 @@ label {
     USE THEM INLINE!
 */
 
-/
+/* Extra small devices (portrait phones, less than 576px)
 No media query since this is the default in mobile first design
 */
 
-/
+/* Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {}
 */
 
-/
+/* Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {}
 */
 
-/
+/* Large devices (landscape tablets, desktops, 992px and up)
 @media (min-width: 992px) {}
 */
 
-/
+/* Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {}
 */
 
-/
+/*
     Print styles.
     ---
     Inlined to avoid the additional HTTP request:
     http://www.phpied.com/delay-loading-your-print-css/
 */
 
-@
 @media print {
     *,
     *:before,
     *:after {
         background: transparent !important;
         color: #000 !important;
-            http://www.sanbeiji.com/archives/953 */
-    box-shadow: none !important;
-    text-shado
+        /* Black prints faster:
+        http://www.sanbeiji.com/archives/953 */
         box-shadow: none !important;
         text-shadow: none !important;
     }
@@ -888,10 +932,10 @@ No media query since this is the default in mobile first design
     abbr[title]:after {
         content: ' (' attr(title) ')';
     }
-      * Don't show links that are fragment identifiers,
+    /*
+    * Don't show links that are fragment identifiers,
     * or use the `javascript:` pseudo protocol
     */
-  a[hr
     a[href^='#']:after,
     a[href^='javascript:']:after {
         content: '';
@@ -904,10 +948,10 @@ No media query since this is the default in mobile first design
         border: 1px solid #999;
         page-break-inside: avoid;
     }
-      * Printing Tables:
+    /*
+    * Printing Tables:
     * http://css-discuss.incutio.com/wiki/Printing_Tables
     */
-  thea
     thead {
         display: table-header-group;
     }
